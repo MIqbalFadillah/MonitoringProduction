@@ -1,0 +1,34 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{06fd7f03-93cb-481f-9c3e-f4faf8e7b05b}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="MonitorJtin.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="MonitorJtin">
+    <MSBuild Projects="MonitorJtin.dproj" Targets="" />
+  </Target>
+  <Target Name="MonitorJtin:Clean">
+    <MSBuild Projects="MonitorJtin.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="MonitorJtin:Make">
+    <MSBuild Projects="MonitorJtin.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="MonitorJtin" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="MonitorJtin:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="MonitorJtin:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
